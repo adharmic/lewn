@@ -1,7 +1,9 @@
 [package]
 name = "lewn"
-version = "0.1.0"
+license = "CC0-1.0"
+version = "0.9.0"
 edition = "2024"
+description = "An implementation of Luhn's checksum algorithm using Rust"
 
 [dependencies]
 clap = {version = "4.5.34", features = ["derive"] }
