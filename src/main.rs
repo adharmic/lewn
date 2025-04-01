@@ -38,11 +38,19 @@ fn main() {
     }
 
     if args.checksum {
-        println!(
-            "Generated checksum for {}: {}",
-            args.sequence,
-            compute_checksum(&args.sequence, false)
-        );
+        if validate_sequence(&args.sequence) {
+            println!(
+                "Generated checksum for {}: {}",
+                args.sequence,
+                compute_checksum(&args.sequence, false)
+            );
+        } else {
+            println!(
+                "Generated checksum for {}: {}",
+                args.sequence,
+                compute_checksum(&args.sequence, true)
+            );
+        }
     }
 
     if args.generate {
